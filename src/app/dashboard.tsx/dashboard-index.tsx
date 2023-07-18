@@ -1,6 +1,7 @@
 import { Card, Col, Row, Tag } from "antd";
 import "./style.css";
 import CalenderTable from "./calender-table";
+import Investor from "../investor.tsx/invesor";
 
 const Dashboard: React.FC = () => {
   return (
@@ -81,6 +82,8 @@ const Dashboard: React.FC = () => {
         </Row>
 
         <CalenderTable />
+
+        {/* <Investor /> */}
     </>
   );
 };

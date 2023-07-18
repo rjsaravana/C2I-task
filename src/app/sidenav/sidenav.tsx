@@ -1,11 +1,25 @@
-import React from "react";
 import { AppstoreOutlined, PoundCircleOutlined } from "@ant-design/icons";
 import { Layout, Menu, theme } from "antd";
+import React, { useState } from "react";
 import Link from "antd/es/typography/Link";
+import MenuItem from "antd/es/menu/MenuItem";
+import Dashboard from "../dashboard.tsx/dashboard-index";
+import Investor from "../investor.tsx/invesor";
 
 const { Header, Content, Footer, Sider } = Layout;
 
-const Sidenav: React.FC = () => {
+// const items: MenuItem[] = [
+//   getItem("Dashboard", "DASHBOARD", <Dashboard />),
+//   getItem("Mentor", "INVESTOR", <Investor />),
+// ];
+interface sideNavPropType {
+  setMenuValue: React.Dispatch<React.SetStateAction<string>>
+}
+
+
+const Sidenav: React.FC<sideNavPropType> = ({setMenuValue})  => {
+  const [collapsed, setCollapsed] = useState(false);
+
   const {
     token: { colorBgContainer },
   } = theme.useToken();
@@ -28,15 +42,32 @@ const Sidenav: React.FC = () => {
         <Menu
           style={{ background: "rgba(0, 167, 234, 1)" }}
           mode="inline"
+          defaultSelectedKeys={["DASHBOARD"]}
+          className="menu-sidenav-layout"
+          onClick={(e) => setMenuValue(e?.key)}
         >
           <Menu.Item key={"DASHBOARD"}>
             <>
-              <span> <AppstoreOutlined className="menu-icons"/> Dashboard </span>
+              <span>
+                {" "}
+                <AppstoreOutlined
+                  className="menu-icons"
+                  style={{ marginRight: "8px" }}
+                />{" "}
+                Dashboard{" "}
+              </span>
             </>
           </Menu.Item>
           <Menu.Item key={"INVESTOR"}>
             <>
-              <span> <PoundCircleOutlined className="menu-icons"/> Investor </span>
+              <span style={{ marginLeft: "-18px" }}>
+                {" "}
+                <PoundCircleOutlined
+                  className="menu-icons"
+                  style={{ marginRight: "8px" }}
+                />{" "}
+                Investor{" "}
+              </span>
             </>
           </Menu.Item>
         </Menu>
