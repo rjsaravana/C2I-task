@@ -64,6 +64,7 @@
 
 .calender-table-card {
     margin: 40px !important;
+    padding-bottom: 40px;
 }
 
 .calender-table-card .ant-card-head {
@@ -135,6 +136,8 @@ table th {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    margin: 0;
+    margin-top: 8px;
 }
 
 .table-header-text p {

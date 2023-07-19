@@ -7,7 +7,7 @@ const Dashboard: React.FC = () => {
   return (
     <>
       <h3 className="dashboard-header">Welcome to Connect2Investors!</h3>
-      <Row gutter={24} style={{padding:'30px',margin:'0px'}}>
+      <Row gutter={24} style={{padding:'30px',margin:'0px',paddingBottom:'0px'}}>
         <Col xl={8} lg={8} md={24} sm={24} xs={24}>
           <Card className="dashboard-cardstyle" hoverable={true}>
             <Row>

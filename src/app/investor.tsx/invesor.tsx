@@ -24,7 +24,7 @@ const Investor: React.FC = () => {
         </div>
       </div>
 
-      <Row gutter={24} style={{ margin: "0px", padding: "20px" }}>
+      <Row gutter={24} style={{ margin: "0px", padding: "40px", paddingBottom:'50px' }}>
         <Col xl={12} lg={12} md={24} sm={24} xs={24}>
           <Card className="card-align-bg" hoverable={true}>
             <Row gutter={16}>
